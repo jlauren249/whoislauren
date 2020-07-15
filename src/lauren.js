@@ -14,7 +14,15 @@ class Lauren extends React.Component
         let showInfo;
         if (this.props.clickedLink === 2)
         {
-        showInfo = <img src={lauren} className="App-logo"/>;
+        showInfo = <div>
+            <img src={lauren} className="App-logo"/>
+            <div>
+                About Me (non work related)
+                Skills
+                Work Experience
+                Projects
+            </div>
+        </div>;
         }    
         console.log('the clickedLink is ' + this.props.clickedLink)
 
