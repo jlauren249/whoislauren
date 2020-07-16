@@ -2,6 +2,7 @@ import React from 'react';
 import marty from './marty.jpg';
 import Marty from './marty.js'
 import Lauren from './lauren.js'
+import Home from './home.js'
 import './App.css';
 
 class App extends React.Component
@@ -39,11 +40,14 @@ class App extends React.Component
     {
       appDisplay = 
       <div className='Welcome'>
+        <h1>
+          Welcome!
+        </h1>
       <img src={marty} className="App-logo" alt="logo" />
         <p>
           I'm Lauren. This is Marty.
           <br></br>
-          I like to let him make the first impression!
+          He doesn't code but he does make a great first impression!
         </p>
       </div>
     }
@@ -51,9 +55,7 @@ class App extends React.Component
       appDisplay = 
       <div className="App">
         <div className="Content">
-          <div>
-            Placeholder
-          </div>
+          <Home clickedLink={this.state.clickedLink}/>
           <Marty clickedLink={this.state.clickedLink}/>
           <Lauren clickedLink={this.state.clickedLink}/>
         </div>
