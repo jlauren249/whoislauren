@@ -29,24 +29,29 @@ class App extends React.Component
     if (this.state.clickedLink === 0)
     {
       header = <div>
-        <header>
+        <div>
         <img src={marty} className="App-logo" alt="logo" />
         <p>
           I'm Lauren. That's Marty (he always makes a great first impression).
           <br></br>
-          Learn more about us by clicking below!
+          Learn more about us by clicking!
         </p>
-      </header>
+      </div>
     </div>
     }
   return (
-    <div className="App">
-      {header}
-      <button className="appbutton" onClick={(e) => this.setLink(e,1)} >Marty</button>
-      <button className="appbutton" onClick={(e) => this.setLink(e,2)} >Lauren</button>
-      <Marty clickedLink={this.state.clickedLink}/>
-      <Lauren clickedLink={this.state.clickedLink}/>
-    </div>
+    <body className="Body">
+      <div className="App">
+        {header}
+        <Marty clickedLink={this.state.clickedLink}/>
+        <Lauren clickedLink={this.state.clickedLink}/>
+      </div>
+      <div className="App-Nav">
+      <button className="appbutton" onClick={(e) => this.setLink(e,0)} >Home</button>
+        <button className="appbutton" onClick={(e) => this.setLink(e,1)} >Marty</button>
+        <button className="appbutton" onClick={(e) => this.setLink(e,2)} >Lauren</button>
+      </div>
+    </body>
   );
 }
 }

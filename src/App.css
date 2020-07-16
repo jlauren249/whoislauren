@@ -1,13 +1,35 @@
+.Body {
+  background-color: #282c34;
+  min-height: 90.25vh;
+  width: 95.3vw;
+  color: white;
+  padding: 2em;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  /* justify-content: center; */
+
+}
+
 .App {
   text-align: center;
-  background-color: #282c34;
-  min-height: 100vh;
+  padding: 2em;
+  justify-content: center;
+  width: 90vw;
+  /* background-color: #282c34; */
+  /* min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: calc(10px + 2vmin); */
+  /* color: white; */
+}
+
+.App-Nav {
+  width: 10vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
 }
 
 .App-logo {
@@ -23,23 +45,14 @@
 }
 
 .appbutton {
-  border-radius: 100%;
-  background-color: purple;
-  height: 5em;
-  width: 10em;
+  border-radius: 10%;
+  background-color: white;
+  height: 3em;
+  width: 6em;
   font-size: 20px;
+  border: purple;
+  margin: .5em;
 }
-
-/* .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-} */
 
 .App-link {
   color: #61dafb;
