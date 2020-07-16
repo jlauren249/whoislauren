@@ -1,28 +1,69 @@
 .Body {
   background-color: #282c34;
-  min-height: 90.25vh;
-  width: 95.3vw;
-  color: white;
-  padding: 2em;
-  display: flex;
-  /* flex-direction: column; */
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
   align-items: center;
-  /* justify-content: center; */
+  color: white;
+}
 
+.Welcome {
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  padding: 2em;
+  justify-content: center;
+  background-color: #282c34;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  animation: Welcome-fade;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-delay: 3s;
+}
+@keyframes Welcome-fade {
+  from {
+    transition: opacity 0.5s;
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
 }
 
 .App {
+  height: 90.25vh;
+  width: 95.3vw;
+  text-align: center;
+  padding: 2em;
+  justify-content: center;
+  background-color: #282c34;
+  display: flex;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  animation: App-fade;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+@keyframes App-fade {
+  from {
+    opacity: 0;
+    pointer-events: none;
+  }
+  to {
+    transition: opacity 0.5s;
+    opacity: 1;
+  }
+}
+
+.Content {
   text-align: center;
   padding: 2em;
   justify-content: center;
   width: 90vw;
-  /* background-color: #282c34; */
-  /* min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: calc(10px + 2vmin); */
-  /* color: white; */
 }
 
 .App-Nav {

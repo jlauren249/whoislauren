@@ -11,46 +11,63 @@ class App extends React.Component
     super(props);
 
     this.state = {
-      clickedLink: 0
+      clickedLink: 0,
+      showWelcome: true
     }
 
     this.setLink = this.setLink.bind(this);
+    this.setWelcome = this.setWelcome.bind(this);
   }
 
- 
+  componentDidMount() {
+    setTimeout(() => {this.setWelcome()}, 4500)
+  };
 
   setLink(e, id)
   {
     this.setState({clickedLink: id})
   };
 
+  setWelcome()
+  {
+    this.setState({showWelcome: !this.state.showWelcome})
+  };
+
   render() {
-    let header;
-    if (this.state.clickedLink === 0)
+    let appDisplay;
+    if (this.state.showWelcome)
     {
-      header = <div>
-        <div>
-        <img src={marty} className="App-logo" alt="logo" />
+      appDisplay = 
+      <div className='Welcome'>
+      <img src={marty} className="App-logo" alt="logo" />
         <p>
-          I'm Lauren. That's Marty (he always makes a great first impression).
+          I'm Lauren. This is Marty.
           <br></br>
-          Learn more about us by clicking!
+          I like to let him make the first impression!
         </p>
       </div>
-    </div>
     }
-  return (
-    <body className="Body">
+    else{
+      appDisplay = 
       <div className="App">
-        {header}
-        <Marty clickedLink={this.state.clickedLink}/>
-        <Lauren clickedLink={this.state.clickedLink}/>
+        <div className="Content">
+          <div>
+            Placeholder
+          </div>
+          <Marty clickedLink={this.state.clickedLink}/>
+          <Lauren clickedLink={this.state.clickedLink}/>
+        </div>
+        <div className="App-Nav">
+          <button className="appbutton" onClick={(e) => this.setLink(e,0)} >Home</button>
+          <button className="appbutton" onClick={(e) => this.setLink(e,1)} >Marty</button>
+          <button className="appbutton" onClick={(e) => this.setLink(e,2)} >Lauren</button>
+        </div>
       </div>
-      <div className="App-Nav">
-      <button className="appbutton" onClick={(e) => this.setLink(e,0)} >Home</button>
-        <button className="appbutton" onClick={(e) => this.setLink(e,1)} >Marty</button>
-        <button className="appbutton" onClick={(e) => this.setLink(e,2)} >Lauren</button>
-      </div>
+    }
+    
+  return (
+    <body className="Body" >
+     {appDisplay}
     </body>
   );
 }
